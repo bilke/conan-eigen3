@@ -1,5 +1,6 @@
 find_path(Eigen3_INCLUDE_DIR NAMES Array
 	PATHS ${CONAN_INCLUDE_DIRS_EIGEN3}/Eigen
+	NO_DEFAULT_PATH
 )
 
 set(Eigen3_FOUND TRUE)
