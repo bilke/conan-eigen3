@@ -32,6 +32,7 @@ class Eigen3Conan(ConanFile):
     def package(self):
         self.copy("FindEigen3.cmake", ".", ".")
         self.copy("*", dst="Eigen", src="eigen-eigen-07105f7124f9/Eigen")
+        self.copy("*", dst="unsupported", src="eigen-eigen-07105f7124f9/unsupported")
 
     def package_info(self):
         self.cpp_info.includedirs = ['.']
