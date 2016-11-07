@@ -11,8 +11,7 @@ class Eigen3ReuseConan(ConanFile):
 
     def build(self):
         cmake = CMake(self.settings)
-        self.run('cmake . %s' % cmake.command_line)
-        # self.run("cmake --build . %s" % cmake.build_config)
+        self.run('cmake %s %s' % (self.conanfile_directory, cmake.command_line))
 
     def test(self):
         return
