@@ -6,7 +6,7 @@ username = os.getenv("CONAN_USERNAME", "bilke")
 
 class Eigen3ReuseConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "Eigen3/3.2.8@%s/%s" % (username, channel)
+    requires = "Eigen3/3.2.9@%s/%s" % (username, channel)
     generators = "cmake"
 
     def build(self):

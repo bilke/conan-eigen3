@@ -6,7 +6,7 @@ language: python
 env:
   global:
     - CONAN_UPLOAD=1
-    - CONAN_REFERENCE="Eigen3/3.2.8"
+    - CONAN_REFERENCE="Eigen3/3.2.9"
     - CONAN_USERNAME="bilke"
     - CONAN_CHANNEL="ci"
     - CONAN_TOTAL_PAGES=1
