@@ -4,6 +4,7 @@ from conans.tools import download, unzip
 
 class Eigen3Conan(ConanFile):
     name = "Eigen3"
+    description = "Eigen is a C++ template library for linear algebra"
     version = "3.2.9"
     generators = "cmake"
     settings = "os", "compiler", "build_type", "arch"
@@ -35,4 +36,4 @@ class Eigen3Conan(ConanFile):
         self.copy("*", dst="unsupported", src="eigen-eigen-dc6cfdf9bcec/unsupported")
 
     def package_info(self):
-        self.cpp_info.includedirs = ['.', './unsupported'] 
+        self.cpp_info.includedirs = ['.', './unsupported']
