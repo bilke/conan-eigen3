@@ -35,4 +35,4 @@ class Eigen3Conan(ConanFile):
         self.copy("*", dst="unsupported", src="eigen-eigen-dc6cfdf9bcec/unsupported")
 
     def package_info(self):
-        self.cpp_info.includedirs = ['.']
+        self.cpp_info.includedirs = ['.', './unsupported'] 
