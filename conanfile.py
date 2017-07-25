@@ -1,5 +1,5 @@
 import os
-from conans import ConanFile, CMake
+from conans import ConanFile
 from conans.tools import download, unzip
 
 class Eigen3Conan(ConanFile):
@@ -12,10 +12,8 @@ class Eigen3Conan(ConanFile):
     url="http://github.com/bilke/conan-eigen3"
     license="http://eigen.tuxfamily.org/index.php?title=Main_Page#License"
 
-    ZIP_FOLDER_NAME = "%s" % version
-
     def source(self):
-        zip_name = self.ZIP_FOLDER_NAME + ".zip"
+        zip_name = "%s.zip" % self.version
         download("http://bitbucket.org/eigen/eigen/get/%s" % zip_name , zip_name)
         unzip(zip_name)
         os.unlink(zip_name)

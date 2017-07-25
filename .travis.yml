@@ -5,15 +5,12 @@ sudo: required
 language: python
 env:
   global:
-    - CONAN_UPLOAD=1
     - CONAN_REFERENCE="Eigen3/3.2.9"
     - CONAN_USERNAME="bilke"
-    - CONAN_CHANNEL="ci"
-    - CONAN_TOTAL_PAGES=1
-    - CONAN_CURRENT_PAGE=1
+    - CONAN_CHANNEL="stable"
 
   matrix:
-    - CONAN_GCC_VERSIONS=4.9 CONAN_USE_DOCKER=1
+    - CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=lasote/conangcc49
 install:
   - ./.travis/install.sh
 script:
