@@ -7,7 +7,6 @@ class Eigen3Conan(ConanFile):
     description = "Eigen is a C++ template library for linear algebra"
     version = "3.2.9"
     generators = "cmake"
-    settings = "os", "compiler", "build_type", "arch"
     exports = ["FindEigen3.cmake"]
     url="http://github.com/bilke/conan-eigen3"
     license="http://eigen.tuxfamily.org/index.php?title=Main_Page#License"
@@ -19,10 +18,6 @@ class Eigen3Conan(ConanFile):
         os.unlink(zip_name)
 
     def config(self):
-        self.settings.remove("compiler")
-        self.settings.remove("os")
-        self.settings.remove("arch")
-        self.settings.remove("build_type")
         self.options.remove("shared")
 
     def build(self):
