@@ -12,6 +12,6 @@ find_package_handle_standard_args(Eigen3 DEFAULT_MSG
 	Eigen3_INCLUDE_DIR
 )
 
-set(Eigen3_INCLUDE_DIRS ${Eigen3_INCLUDE_DIR})
+set(Eigen3_INCLUDE_DIRS ${Eigen3_INCLUDE_DIR}/..)
 
 mark_as_advanced(Eigen3_INCLUDE_DIR)
