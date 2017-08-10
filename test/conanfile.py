@@ -1,18 +1,23 @@
-from conans import ConanFile, CMake
 import os
+from conans import ConanFile, CMake
 
-channel = os.getenv("CONAN_CHANNEL", "testing")
-username = os.getenv("CONAN_USERNAME", "bilke")
+default_user = "bilke"
+default_channel = "testing"
 
-class Eigen3ReuseConan(ConanFile):
+channel = os.getenv("CONAN_CHANNEL", default_channel)
+username = os.getenv("CONAN_USERNAME", default_user)
+
+class DefaultNameConan(ConanFile):
+    name = "DefaultName"
+    version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
-    requires = "Eigen3/3.2.9@%s/%s" % (username, channel)
     generators = "cmake"
+    requires = "Eigen3/3.2.9@%s/%s" % (username, channel)
 
     def build(self):
-        cmake = CMake(self.settings)
-        self.run('cmake %s %s' % (self.conanfile_directory, cmake.command_line))
+        cmake = CMake(self)
+        cmake.configure(source_dir=self.conanfile_directory, build_dir="./")
+        cmake.build()
 
     def test(self):
-        return
-        # self.run(os.sep.join([".","bin", "test"]))
+        self.run(".%stest" %os.sep)
