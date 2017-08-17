@@ -5,7 +5,7 @@ sudo: required
 language: python
 env:
   global:
-    - CONAN_REFERENCE="Eigen3/3.2.9"
+    - CONAN_REFERENCE="Eigen3/3.3.4"
     - CONAN_USERNAME="bilke"
     - CONAN_LOGIN_USERNAME="bilke"
     - CONAN_CHANNEL="stable"

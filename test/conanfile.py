@@ -12,7 +12,6 @@ class DefaultNameConan(ConanFile):
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
-    requires = "Eigen3/3.2.9@%s/%s" % (username, channel)
 
     def build(self):
         cmake = CMake(self)
