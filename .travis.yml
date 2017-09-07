@@ -5,11 +5,11 @@ sudo: required
 language: python
 env:
   global:
-    - CONAN_REFERENCE="Eigen3/3.2.9"
-    - CONAN_USERNAME="bilke"
-    - CONAN_LOGIN_USERNAME="bilke"
-    - CONAN_CHANNEL="stable"
-    - CONAN_UPLOAD="https://api.bintray.com/conan/ogs/conan"
+    - CONAN_REFERENCE: "Eigen3/3.2.9"
+    - CONAN_USERNAME: "bilke"
+    - CONAN_LOGIN_USERNAME: "jenkins"
+    - CONAN_CHANNEL: "stable"
+    - CONAN_UPLOAD: "https://ogs.jfrog.io/ogs/api/conan/conan"
 
   matrix:
     - CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=lasote/conangcc49
