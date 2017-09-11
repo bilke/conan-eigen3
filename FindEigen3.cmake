@@ -4,7 +4,7 @@ find_path(EIGEN3_INCLUDE_DIR NAMES Array
 	NO_DEFAULT_PATH
 )
 
-set(EIGEN3_FOUND TRUE)
+set(EIGEN3_FOUND TRUE CACHE INTERNAL "")
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(Eigen3 DEFAULT_MSG
