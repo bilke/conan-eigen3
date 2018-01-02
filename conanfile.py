@@ -11,6 +11,10 @@ class Eigen3Conan(ConanFile):
     url="http://github.com/bilke/conan-eigen3"
     license="http://eigen.tuxfamily.org/index.php?title=Main_Page#License"
 
+    def conan_info(self):
+        self.info.requires.clear()
+        self.info.settings.clear()
+
     def source(self):
         zip_name = "%s.zip" % self.version
         download("http://bitbucket.org/eigen/eigen/get/%s" % zip_name , zip_name)
